@@ -1,24 +1,15 @@
-# README
+# ミニアプリ開発
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+##要件
+Userがログイン / ログアウト / サインインできる
+Userがブログを投稿できる。
+Userが自分のブログを編集できる。
+Userが自分のブログを削除できる。
+ログインしていなくても全てのブログを閲覧できる。
+フォームの作成には「form_for」あるいは「form_with」を使う
+一覧表示には「部分テンプレート」を使用する。
 
-Things you may want to cover:
+***
 
-* Ruby version
+##追加実装
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
