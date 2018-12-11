@@ -24,4 +24,11 @@ main {
   flex: 1 0 auto;
 }
 
+.btn{
+  margin:10px 0 10px;
+}
 
+/* label color */
+ .input-field label {
+   color: #000;
+ }
