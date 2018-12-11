@@ -27,16 +27,45 @@
       <div class="nav-wrapper container">
         <%= link_to 'MiniApp_KK', root_path,class: "brand-logo" %>
         <ul id="nav-mobile" class="right hide-on-med-and-down">
-          <li><a href="sass.html">ログアウト</a></li>
-          <li><a href="badges.html">投稿</a></li>
-          <li><%= link_to '新規登録', new_user_registration_path %></li>
-          <li><%= link_to 'ログイン', new_user_session_path %></li>
+          <% if user_signed_in? %>
+            <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete %></li>
+            <li><a href="badges.html">投稿</a></li>
+          <% else %>
+            <li><%= link_to '新規登録', new_user_registration_path %></li>
+            <li><%= link_to 'ログイン', new_user_session_path %></li>
+          <% end %>
         </ul>
       </div>
     </nav>
   </header>
 
     <%= yield %>
+<footer class="page-footer #ffa000 amber darken-2">
+  <div class="container">
+    <div class="row">
+      <div class="col l6 s12">
+        <h5 class="white-text">Footer Content</h5>
+        <p class="grey-text text-lighten-4">You can use rows and columns here to organize your footer content.</p>
+      </div>
+      <div class="col l4 offset-l2 s12">
+        <h5 class="white-text">Links</h5>
+        <ul>
+          <li><a class="grey-text text-lighten-3" href="#!">Link 1</a></li>
+          <li><a class="grey-text text-lighten-3" href="#!">Link 2</a></li>
+          <li><a class="grey-text text-lighten-3" href="#!">Link 3</a></li>
+          <li><a class="grey-text text-lighten-3" href="#!">Link 4</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="footer-copyright">
+    <div class="container">
+      <p class="center">© 2018 Copyright Text</p>
+    </div>
+  </div>
+</footer>
+
+<script type="text/javascript" src="./app.js"></script>
 
   </body>
 </html>
