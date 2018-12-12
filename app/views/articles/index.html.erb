@@ -1,21 +1,9 @@
-<main>
-  <div class="container">
-    <div class="row">
-      <div class="col 12">
-        <div class="card #f5f5f5 grey lighten-4">
-          <div class="card-content black-text">
-            <span class="card-title">Card Title</span>
-            <p>I am a very simple card. I am good at containing small bits of information.
-            I am convenient because I require little markup to use effectively.</p>
-          </div>
-          <div class="card-action">
-            <a href="#">詳細画面</a>
-            <a href="#">編集</a>
-            <a href="#">削除</a>
-          </div>
-        </div>
-      </div>
-
-    </div>
+<div class="container">
+  <div class="row">
+    <h2 class="center">投稿記事</h2>
+    <% @article.each do |article|%>
+      <%= render partial: "./shared/article", locals: {article: article} %>
+    <% end %>
+    <%= paginate(@article) %>
   </div>
-</main>
+</div>
