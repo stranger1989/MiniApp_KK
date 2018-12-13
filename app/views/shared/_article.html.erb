@@ -1,0 +1,21 @@
+<div class="row">
+  <div class="card #f5f5f5 grey lighten-4">
+    <div class="card-content black-text">
+      <span class="card-title">
+        <%= article.title %>
+      </span>
+      <p>
+        <%= article.article %>
+      </p>
+    </div>
+    <div class="card-action">
+      <%= link_to '詳細画面', article_path(article.id) %>
+      <% if user_signed_in? %>
+        <% if article.user_id == current_user.id %>
+          <%= link_to '編集', "/articles/#{article.id}/edit" %>
+          <%= link_to '削除', article_path(article.id), method: :delete %>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+</div>

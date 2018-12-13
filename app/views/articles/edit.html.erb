@@ -1,0 +1,21 @@
+<div class="container">
+  <div class="row">
+    <div class="col s12 m12 l8 offset-l2">
+      <h2 class="center">投稿編集</h2>
+      <%= form_for @article do |f| %>
+        <div class="field">
+          <%= f.label :タイトル入力 %><br />
+          <%= f.text_field :title, placeholder: 'タイトルを入力' %>
+        </div>
+        <div class="field">
+          <%= f.label :投稿記事 %><br />
+          <%= f.text_area :article, placeholder: '記事を書いてください',class: "materialize-textarea", rows:"40" %>
+        </div>
+        <div class="actions waves-effect waves-light btn #fb8c00 orange darken-1 col s12 m6 offset-m3">
+          <%= f.submit "編集する" %>
+        </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
