@@ -1,9 +1,7 @@
 <div class="container">
-  <div class="row">
     <h2 class="center">投稿記事</h2>
     <% @article.each do |article|%>
       <%= render partial: "./shared/article", locals: {article: article} %>
     <% end %>
     <%= paginate(@article) %>
-  </div>
 </div>
