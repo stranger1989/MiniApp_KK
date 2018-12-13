@@ -33,6 +33,9 @@
             <li>
               <%= link_to '投稿', new_article_path %>
             </li>
+            <li>
+              <%= link_to 'マイページ', user_path(current_user.id) %>
+            </li>
           <% else %>
             <li>
               <%= link_to '新規登録', new_user_registration_path %>
