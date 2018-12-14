@@ -22,6 +22,21 @@ body {
 
 main {
   flex: 1 0 auto;
+  min-height:100vh;
+  // padding-top:64px;
+}
+
+// .header{
+//   width: 100%;
+//   height:64px;
+//   position: fixed;
+//   z-index:10;
+//   transition:.2s;
+// }
+
+.input-btn{
+  color:white;
+  outline: none;
 }
 
 .btn{
@@ -56,4 +71,10 @@ main {
         opacity:0.5;
       }
     }
+}
+
+.scrollToTop{
+  position: fixed !important;
+  right: 50px;
+  bottom: 50px;
 }

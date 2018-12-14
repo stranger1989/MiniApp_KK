@@ -9,22 +9,21 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>MiniApp_KK</title>
     <link rel="stylesheet" href="">
       <!-- Compiled and minified CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <!-- Compiled and minified JavaScript -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
-    <script
-    src="https://code.jquery.com/jquery-3.3.1.js"
-    integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
-    crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
   </head>
 
   <body>
-  <header>
+  <header class="header">
     <nav class="#ffa000 amber darken-2">
       <div class="nav-wrapper container">
+          <a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a>
         <%= link_to 'MiniApp_KK', root_path,class: "brand-logo" %>
         <ul id="nav-mobile" class="right hide-on-med-and-down">
           <% if user_signed_in? %>
@@ -47,6 +46,36 @@
         </ul>
       </div>
     </nav>
+    <ul id="slide-out" class="sidenav">
+      <% if user_signed_in? %>
+        <li><%= link_to destroy_user_session_path, method: :delete do%>
+            <i class="material-icons">exit_to_app
+</i> ログアウト
+          <% end %>
+        </li>
+        <li>
+          <%= link_to new_article_path do%>
+            <i class="material-icons">send</i> 投稿
+          <% end %>
+        </li>
+        <li>
+          <%= link_to user_path(current_user.id) do%>
+            <i class="material-icons">home</i> マイページ
+          <% end %>
+        </li>
+      <% else %>
+        <li>
+          <%= link_to new_user_registration_path do%>
+            <i class="material-icons">assignment_ind</i> 新規登録
+          <% end %>
+        </li>
+        <li>
+          <%= link_to new_user_session_path do %>
+            <i class="material-icons">account_box</i> ログイン
+          <% end %>
+        </li>
+      <% end %>
+    </ul>
   </header>
     <main>
       <%= yield %>
@@ -75,8 +104,8 @@
     </div>
   </div>
 </footer>
-
-<script type="text/javascript" src="./app.js"></script>
-
+  <div class="scrollToTop btn-floating btn-large waves-effect">
+    <i class="material-icons #ef6c00 orange darken-3">arrow_upward</i>
+  </div>
   </body>
 </html>
