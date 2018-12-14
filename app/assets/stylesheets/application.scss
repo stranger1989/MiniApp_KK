@@ -20,10 +20,21 @@ body {
   flex-direction: column;
 }
 
+h2{
+  font-size:3.5rem !important;
+}
+
+h3{
+  font-size:2rem !important;
+}
+
+h4{
+  font-size:1.5rem !important;
+}
 main {
   flex: 1 0 auto;
   min-height:100vh;
-  // padding-top:64px;
+  padding-bottom:50px;
 }
 
 // .header{
@@ -37,6 +48,11 @@ main {
 .input-btn{
   color:white;
   outline: none;
+  cursor: pointer;
+}
+
+.indent span{
+  vertical-align: top;
 }
 
 .btn{

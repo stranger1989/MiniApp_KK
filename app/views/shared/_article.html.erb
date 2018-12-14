@@ -16,6 +16,10 @@
           <%= link_to '削除', article_path(article.id), method: :delete %>
         <% end %>
       <% end %>
+    <div class="right indent">
+      <i class="material-icons">account_circle
+</i><span> <%= article.user.name%></span>
+    </div>
     </div>
   </div>
 </div>

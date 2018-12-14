@@ -3,4 +3,26 @@
     <h2 class="center">記事詳細</h2>
       <%= render partial: "./shared/article", locals: {article: @article} %>
   </div>
+
+<% if @article.comments %>
+  <h3>コメント一覧</h3>
+    <%= render partial: "./shared/comment", locals: {article: @article} %>
+<% end %>
+
+<% if user_signed_in? %>
+  <div class="row">
+    <div class="col s12 m12 l12">
+      <div class="form_contents">
+        <%= form_for [@article, @comment] do |f| %>
+          <div class="field">
+            <%= f.label :コメントを書いてね %><br />
+            <%= f.text_area :comment, placeholder: 'コメントを書いてね',class: "materialize-textarea validate", rows:"40"%>
+          </div>
+          <div class="actions waves-effect waves-light btn #fb8c00 orange darken-1 col s12 m6 offset-m3">
+            <%= f.submit "投稿する", class:"input-btn" %>
+          </div>
+        <% end %>
+    </div>
+  </div>
+<% end %>
 </div>
