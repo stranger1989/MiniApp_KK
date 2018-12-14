@@ -1,0 +1,14 @@
+<div class="row">
+  <% article.comments.each do |comment| %>
+    <div class="card #fff3e0 orange lighten-5">
+      <div class="card-content black-text">
+        <div class="comment_text_box article clearfix">
+          <span class="card-title">
+            <%= comment.user.name %>
+          </span>
+          <p><%= comment.comment %></p>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>
